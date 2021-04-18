@@ -19,8 +19,10 @@ jobs:
         with:
           verbose: true
           repo: overseerr-dev
-          curl: :5055
-          curl_opts: -c /dev/null
+          curl: :5055/api/v1/status
+          pipe: |
+            jq -r ".version" |
+            grep -qw "$(label org.label-schema.version)"
       - name: publish
         uses: triptixx/action-docker-publish@master
         with:

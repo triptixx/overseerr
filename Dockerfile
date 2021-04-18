@@ -4,7 +4,8 @@ ARG OVERSEERR_VER=1.23.1
 FROM node:alpine AS builder
 
 ARG OVERSEERR_VER
-ENV COMMIT_TAG="${OVERSEERR_VER}"
+ENV COMMIT_TAG="${OVERSEERR_VER}" \
+    CONFIG_DIRECTORY="/config"
 
 ### install overseerr
 WORKDIR /output/overseerr
@@ -48,7 +49,7 @@ VOLUME ["/config"]
 EXPOSE 5055/TCP
 
 HEALTHCHECK --start-period=10s --timeout=5s \
-    CMD wget -qO /dev/null --header=Content-Type:application/json "http://localhost:5055"
+    CMD wget -qO /dev/null "http://localhost:5055/api/v1/status"
 
 ENTRYPOINT ["/sbin/tini", "--", "/usr/local/bin/entrypoint.sh"]
 CMD ["yarn", "start"]
