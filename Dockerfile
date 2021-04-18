@@ -17,7 +17,7 @@ RUN apk add --no-cache git; \
     cp -a /overseerr-src/server /overseerr-src/src /overseerr-src/public .; \
     yarn run build; \
     yarn install --production --ignore-scripts --prefer-offline; \
-    echo "{\"commitTag\": \"${OVERSEERR_VER}\"}" > /overseerr/committag.json; \
+    echo "{\"commitTag\": \"${OVERSEERR_VER}\"}" > committag.json; \
     ln -s /config config; \
     rm -rf src server .eslintrc.js babel.config.js next-env.d.ts next.config.js postcss.config.js \
         stylelint.config.js tailwind.config.js tsconfig.json yarn.lock
@@ -40,8 +40,7 @@ LABEL org.label-schema.name="overseerr" \
 COPY --from=builder /output/ /
 
 WORKDIR /overseerr
-RUN apk add --no-cache yarn; \
-    ln -s /config /overseerr/config
+RUN apk add --no-cache yarn
 
 VOLUME ["/config"]
 
