@@ -1,0 +1,31 @@
+name: docker build
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  overseerr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: clone
+        uses: actions/checkout@master
+      - name: build
+        uses: triptixx/action-docker-build@master
+        with:
+          repo: overseerr-dev
+      - name: test
+        uses: triptixx/action-docker-test@master
+        with:
+          verbose: true
+          repo: overseerr-dev
+          curl: :5055
+          curl_opts: -c /dev/null
+      - name: publish
+        uses: triptixx/action-docker-publish@master
+        with:
+          docker_username: ${{ secrets.docker_username }}
+          docker_password: ${{ secrets.docker_password }}
+          from: overseerr-dev
+          repo: ${{ secrets.docker_username }}/overseerr
+          tags: latest,%label org.label-schema.version | %auto
