@@ -4,6 +4,7 @@ ARG OVERSEERR_VER=1.23.1
 FROM node:alpine AS builder
 
 ARG OVERSEERR_VER
+ENV COMMIT_TAG="${OVERSEERR_VER}"
 
 ### install overseerr
 WORKDIR /output/overseerr
