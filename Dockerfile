@@ -4,7 +4,8 @@ ARG OVERSEERR_VER=1.27.0
 FROM node:alpine AS builder
 
 ARG OVERSEERR_VER
-ENV COMMIT_TAG="${OVERSEERR_VER}"
+ENV COMMIT_TAG="${OVERSEERR_VER}" \
+    NODE_OPTIONS=--openssl-legacy-provider
 
 ### install overseerr
 WORKDIR /output/overseerr
