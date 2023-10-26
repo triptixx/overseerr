@@ -1,15 +1,14 @@
 [hub]: https://hub.docker.com/r/loxoo/overseerr
-[mbdg]: https://microbadger.com/images/loxoo/overseerr
-[git]: https://github.com/triptixx/overseerr
-[actions]: https://github.com/triptixx/overseerr/actions
+[git]: https://github.com/triptixx/overseerr/tree/main
+[actions]: https://github.com/triptixx/overseerr/actions/workflows/main.yml
 
 # [loxoo/overseerr][hub]
-[![Layers](https://images.microbadger.com/badges/image/loxoo/overseerr.svg)][mbdg]
-[![Latest Version](https://images.microbadger.com/badges/version/loxoo/overseerr.svg)][hub]
-[![Git Commit](https://images.microbadger.com/badges/commit/loxoo/overseerr.svg)][git]
+[![Git Commit](https://img.shields.io/github/last-commit/triptixx/overseerr/main)][git]
+[![Build Status](https://github.com/triptixx/overseerr/actions/workflows/main.yml/badge.svg?branch=main)][actions]
+[![Latest Version](https://img.shields.io/docker/v/loxoo/overseerr/latest)][hub]
+[![Size](https://img.shields.io/docker/image-size/loxoo/overseerr/latest)][hub]
 [![Docker Stars](https://img.shields.io/docker/stars/loxoo/overseerr.svg)][hub]
 [![Docker Pulls](https://img.shields.io/docker/pulls/loxoo/overseerr.svg)][hub]
-[![Build Status](https://github.com/triptixx/overseerr/workflows/docker%20build/badge.svg)][actions]
 
 ## Usage
 
