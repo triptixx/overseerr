@@ -32,7 +32,7 @@ RUN chmod +x /output/usr/local/bin/*.sh
 FROM loxoo/alpine:${ALPINE_TAG}
 
 ARG OVERSEERR_VER
-ENV SUID=952 SGID=952
+ENV SUID=951 SGID=951
 
 LABEL org.label-schema.name="overseerr" \
       org.label-schema.description="Request management and media discovery tool for the Plex ecosystem" \

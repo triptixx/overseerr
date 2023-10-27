@@ -24,8 +24,8 @@ docker run -d \
 
 ## Environment
 
-- `$SUID`         - User ID to run as. _default: `952`_
-- `$SGID`         - Group ID to run as. _default: `952`_
+- `$SUID`         - User ID to run as. _default: `951`_
+- `$SGID`         - Group ID to run as. _default: `951`_
 - `$TZ`           - Timezone. _optional_
 
 ## Volume
