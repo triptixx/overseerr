@@ -49,7 +49,7 @@ VOLUME ["/config"]
 EXPOSE 5055/TCP
 
 HEALTHCHECK --start-period=10s --timeout=5s \
-    CMD wget -qO /dev/null "http://localhost:5055/api/v1/status"
+    CMD wget -qO /dev/null "http://127.0.0.1:5055/api/v1/status"
 
 ENTRYPOINT ["/sbin/tini", "--", "/usr/local/bin/entrypoint.sh"]
 CMD ["yarn", "start"]
